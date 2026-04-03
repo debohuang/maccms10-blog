@@ -873,6 +873,8 @@ class Collect extends Base {
                 $v['vod_down_server'] = (string)join('$$$', (array)$cj_down_server_arr);
                 $v['vod_down_note'] = (string)join('$$$', (array)$cj_down_note_arr);
 
+                mac_debug_log($where, 'where');
+
                 if($blend===false){
                     $info = model('Vod')->where($where)->find();
                 }
@@ -892,7 +894,7 @@ class Collect extends Base {
                 if ($config['tag'] == 1 && empty($v['vod_tag']) && empty($info['vod_tag'])) {
                     $v['vod_tag'] = mac_filter_xss(mac_get_tag($v['vod_name'], $v['vod_content']));
                 }
-
+                mac_debug_log($info, 'info');
                 if (!$info) {
                     // 新增
                     if ($param['opt'] == 2) {

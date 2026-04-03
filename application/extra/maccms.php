@@ -38,6 +38,7 @@ return array (
     'site_close_tip' => '站点暂时关闭，请稍后访问',
     'ads_dir' => 'ads',
     'mob_ads_dir' => 'ads',
+    'new_version' => '0',
   ),
   'app' => 
   array (
@@ -190,8 +191,8 @@ return array (
   ),
   'interface' => 
   array (
-    'status' => 0,
-    'pass' => '2RK20D7UKAWWC5RV',
+    'status' => '1',
+    'pass' => 'OX3YY8MSKLVKDS98',
     'vodtype' => '动作片=动作',
     'arttype' => '头条=头条',
     'actortype' => '',
@@ -248,12 +249,18 @@ return array (
       'psename' => '1',
       'psernd' => '0',
       'psesyn' => '0',
+      'pseplayer' => '0',
+      'psearea' => '0',
+      'pselang' => '0',
       'urlrole' => '0',
-      'inrule' => ',f,g',
+      'inrule' => ',a,b',
       'uprule' => ',a',
       'filter' => '色戒,色即是空',
       'namewords' => '第1季=第一季#第2季=第二季#第3季=第三季#第4季=第四季',
       'thesaurus' => ' =',
+      'playerwords' => '',
+      'areawords' => '',
+      'langwords' => '',
       'words' => 'aaa#bbb#ccc#ddd#eee',
     ),
     'art' => 
@@ -338,6 +345,14 @@ return array (
       'words' => '',
       'uprule' => ',',
     ),
+    'manga' => 
+    array (
+      'status' => '0',
+      'pic' => '0',
+      'filter' => '',
+      'inrule' => ',a',
+      'uprule' => ',',
+    ),
   ),
   'api' => 
   array (
@@ -386,7 +401,7 @@ return array (
       'cachetime' => '',
       'auth' => '',
     ),
-    'website' =>
+    'website' => 
     array (
       'status' => '0',
       'charge' => '0',
@@ -397,17 +412,17 @@ return array (
       'cachetime' => '',
       'auth' => '',
     ),
-  'publicapi' =>
-      array (
-          'status' => '0',
-          'charge' => '0',
-          'pagesize' => '20',
-          'imgurl' => '',
-          'typefilter' => '',
-          'datafilter' => '',
-          'cachetime' => '',
-          'auth' => '',
-      ),
+    'publicapi' => 
+    array (
+      'status' => '0',
+      'charge' => '0',
+      'pagesize' => '20',
+      'imgurl' => '',
+      'typefilter' => '',
+      'datafilter' => '',
+      'cachetime' => '',
+      'auth' => '',
+    ),
   ),
   'connect' => 
   array (

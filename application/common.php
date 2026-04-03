@@ -3143,3 +3143,70 @@ function mac_strip_tags($string) {
 }
 
 
+// +----------------------------------------------------------------------
+// | 系统公共函数
+// +----------------------------------------------------------------------
+
+if (!function_exists('mac_array_column')) {
+    function mac_array_column($input, $columnKey, $indexKey = null)
+    {
+        $result = array();
+        foreach ($input as $k => $v) {
+            if (null === $indexKey) {
+                $result[] = $v[$columnKey];
+            } else {
+                $result[$v[$indexKey]] = $v[$columnKey];
+            }
+        }
+        return $result;
+    }
+}
+
+/**
+ * 输出日志到根目录的日志文件
+ * @param string $message 日志内容
+ * @param string $level 日志级别，默认为info
+ * @param string $filename 日志文件名，默认为logs.txt
+ * @return bool 是否写入成功
+ */
+function mac_log($message, $level = 'info', $filename = 'logs.txt')
+{
+    // 确保日志文件路径存在
+    $logPath = ROOT_PATH . $filename;
+
+    // 准备日志内容
+    $time = date('Y-m-d H:i:s');
+    $logContent = "[$time] [$level] $message\n";
+
+    // 写入日志
+    return file_put_contents($logPath, $logContent, FILE_APPEND | LOCK_EX);
+}
+
+/**
+ * 输出调试日志到根目录的debug.log文件
+ * @param mixed $data 要记录的数据
+ * @param string $message 日志消息
+ * @return bool 是否写入成功
+ */
+function mac_debug_log($data, $message = '')
+{
+    // 确保日志文件路径存在
+    $logPath = ROOT_PATH . 'debug.log';
+
+    // 准备日志内容
+    $time = date('Y-m-d H:i:s');
+    $logContent = "[$time] [DEBUG] $message\n";
+
+    // 如果是数组或对象，转换为JSON格式
+    if (is_array($data) || is_object($data)) {
+        $logContent .= json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . "\n";
+    } else {
+        $logContent .= $data . "\n";
+    }
+
+    // 写入日志
+    return file_put_contents($logPath, $logContent, FILE_APPEND | LOCK_EX);
+}
+
+
+
