@@ -102,8 +102,8 @@ class Type extends Base {
         $parent = $lp['parent'];
         $format = $lp['format'];
         $flag = $lp['flag'];
-        $start = intval(abs($lp['start']));
-        $num = intval(abs($lp['num']));
+        $start = abs(intval($lp['start']));
+        $num = abs(intval($lp['num']));
         $cachetime = $lp['cachetime'];
         $not = $lp['not'];
         $page=1;

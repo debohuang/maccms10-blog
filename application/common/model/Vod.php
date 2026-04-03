@@ -136,9 +136,9 @@ class Vod extends Base {
         $director = $lp['director'];
         $version = $lp['version'];
         $year = $lp['year'];
-        $start = intval(abs($lp['start']));
-        $num = intval(abs($lp['num']));
-        $half = intval(abs($lp['half']));
+        $start = abs(intval($lp['start']));
+        $num = abs(intval($lp['num']));
+        $half = abs(intval($lp['half']));
         $weekday = $lp['weekday'];
         $tv = $lp['tv'];
         $timeadd = $lp['timeadd'];

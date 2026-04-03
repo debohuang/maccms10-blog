@@ -698,7 +698,7 @@ class User extends Base
         $arr = [];
         $ids = explode(',', $ids);
         foreach ($ids as $k => $v) {
-            $v = intval(abs($v));
+            $v = abs(intval($v));
             $arr[$v] = $v;
         }
 
@@ -744,7 +744,7 @@ class User extends Base
         $arr = [];
         $ids = explode(',', $ids);
         foreach ($ids as $k => $v) {
-            $v = intval(abs($v));
+            $v = abs(intval($v));
             $arr[$v] = $v;
         }
 
@@ -795,7 +795,7 @@ class User extends Base
         $arr = [];
         $ids = explode(',', $ids);
         foreach ($ids as $k => $v) {
-            $v = intval(abs($v));
+            $v = abs(intval($v));
             $arr[$v] = $v;
         }
 
